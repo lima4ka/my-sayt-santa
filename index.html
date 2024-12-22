@@ -29,10 +29,21 @@
             color: rgb(0, 0, 0);
             /* Цвет текста */
         }
+
+        #body {
+            background-image: url("https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Новогодний баннер.jpg");
+            background-color: rgba(255, 255, 255, 0.486);
+            background-blend-mode: overlay;
+        }
+
+        .form-container {
+            display: none;
+        }
+    </style>
     </style>
 </head>
 
-<body style="background-color: gray; color: black;" background="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Новогодний баннер.jpg">
+<body style="background-color: gray; color: black;" id="body">
     <header>
         <center>
             <img src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Premium Vector _ Christmas Vector Realistic divider with new year fir tree red satin bow isolated on white background (1).png"
@@ -51,14 +62,100 @@
                     <td><a href="#contacts">
                             <font color="black"><strong><big>Котакты</big></strong>&nbsp;&nbsp;</font>
                         </a></td>
-                    <td><a href="#">
-                            <font color="black"><strong><big>Регистрация</big></strong>&nbsp;&nbsp;</font>
-                        </a></td>
-                    <td><a href="#">
-                            <font color="black"><strong><big>Войти</big></strong></font>
-                        </a></td>
+                    <td><font color="black"><strong><big><button onclick="showForm('registerForm')">Регистрация</button></big></strong>&nbsp;&nbsp;</font></td>
+                    <td><font color="black"><strong><big><button onclick="showForm('loginForm')">Вход</button></big></strong></font></td>
                 </tr>
             </table>
+            
+<!-- Форма регистрации -->
+<div id="registerForm" class="form-container">
+    <table>
+        <ul>
+    <li class="text-in-border"><h3>Регистрация</h3></li>
+    <form id="registrationForm">
+    <li class="text-in-border"><label for="username">Имя пользователя:</label></li>
+        <li class="text-in-border"><input type="text" id="username" name="username" required></li>
+
+    <li class="text-in-border"><label for="email">Электронная почта:</label></li>
+<li class="text-in-border"><input type="email" id="email" name="email" required></li>
+
+    <li class="text-in-border"><label for="password">Пароль:</label></li>
+<li class="text-in-border"><input type="password" id="password" name="password" required></li>
+
+    <li class="text-in-border"><button type="submit">Зарегистрироваться</button></li>
+    </form>
+</ul>
+</table>
+</div>
+
+<!-- Форма входа -->
+<div id="loginForm" class="form-container">
+    <table>
+        <ul>
+        <li class="text-in-border"><h3>Вход</h3></li>
+    <form id="loginForm">
+    <li class="text-in-border"><label for="loginEmail">Электронная почта:</label></li>
+<li class="text-in-border"><input type="email" id="loginEmail" name="email" required></li>
+
+<li class="text-in-border"><label for="loginPassword">Пароль:</label></li>
+<li class="text-in-border"><input type="password" id="loginPassword" name="password" required></li>
+
+<li class="text-in-border"><button type="submit">Войти</button></li>
+    </form>
+</ul>
+</table>
+</div>
+
+<script>
+    // Функция для переключения между формами
+    function showForm(formId) {
+        // Скрыть все формы
+        const forms = document.querySelectorAll('.form-container');
+        forms.forEach(form => form.style.display = 'none');
+
+        // Показать выбранную форму
+        const selectedForm = document.getElementById(formId);
+        if (selectedForm) {
+            selectedForm.style.display = 'block';
+        }
+    }
+
+    // По умолчанию показывать форму регистрации
+    showForm('registerForm');
+
+    // Обработчик для регистрации
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        let username = document.getElementById('username').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        // Валидация данных
+        if (username && email && password) {
+            alert("Вы успешно зарегистрировались!");
+            // Здесь можно добавить код для отправки данных на сервер
+        } else {
+            alert("Пожалуйста, заполните все поля.");
+        }
+    });
+
+    // Обработчик для входа
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let loginEmail = document.getElementById('loginEmail').value;
+        let loginPassword = document.getElementById('loginPassword').value;
+
+        // Валидация данных
+        if (loginEmail && loginPassword) {
+            alert("Вы успешно вошли в систему!");
+            // Здесь можно добавить код для проверки данных на сервере
+        } else {
+            alert("Пожалуйста, введите свои данные.");
+        }
+    });
+</script>
             <hr size="15" color="red">
         </center>
     </header>
@@ -66,7 +163,8 @@
         <center>
             <nav>
                 <tr>
-                    <td><a href="#sertefikat"><img src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Cd Christmas Flyer.png"
+                    <td><a href="#sertefikat"><img
+                                src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Cd Christmas Flyer.png"
                                 alt="Перейти в секцию" width="220" height="140" title="Сертификаты"></a></td>
                     <td><a href="#snegurohki"><img
                                 src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/031881d8-9309-48a2-8aaf-952f6f5f15ad (1).png"
@@ -90,9 +188,6 @@
                 <div>
                     <section id="sertefikat">
                         <article>
-                            <h1>
-                                <font size="4">СЕРТИФИКАТЫ</font>
-                            </h1>
                             <table>
                                 <tr>
                                     <td><img src="https://st3.depositphotos.com/5261163/13412/v/450/depositphotos_134124480-stock-illustration-christmas-gift-voucher-with-prepaid.jpg"
@@ -113,7 +208,7 @@
                                         </strong></font>
                                 </tr>
                             </table>
-                            <font size="4" color="red"><a href="#order" class="text-in-border">Купить</a></font>
+                            <font size="4" color="red"><a href="santaSertefikat.html" class="text-in-border">Купить</a></font>
                         </article>
                     </section><br><br><br><br>
                     <hr size="10" color="black">
@@ -140,7 +235,7 @@
                                     <td class="text-in-border"><button><a href="#Angella">Подробнее</a></button>
                                     </td>
                                     <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="#order">Заказать без раздумий</a></font>
+                                            <font size="4" color="red"><a href="santaSnegurka.html">Заказать без раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -166,7 +261,7 @@
                                     <td class="text-in-border"><button><a href="#Ganna">Подробнее</a></button>
                                     </td>
                                     <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="#order">Заказать без раздумий</a></font>
+                                            <font size="4" color="red"><a href="santaSnegurka1.html">Заказать без раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -190,7 +285,7 @@
                                     <td class="text-in-border"><button><a href="#Lubava">Подробнее</a></button>
                                     </td>
                                     <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="#order">Заказать без раздумий</a></font>
+                                            <font size="4" color="red"><a href="santaSnegurka2.html">Заказать без раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -221,7 +316,7 @@
                                     <td class="text-in-border"><button><a href="#Ibragim">Подробнее</a></button>
                                     </td>
                                     <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="#order">Заказать без раздумий</a></font>
+                                            <font size="4" color="red"><a href="santaSanta.html">Заказать без раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -245,7 +340,7 @@
                                     <td class="text-in-border"><button><a href="#Olega">Подробнее</a></button>
                                     </td>
                                     <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="#order">Заказать без раздумий</a></font>
+                                            <font size="4" color="red"><a href="santaSanta1.html">Заказать без раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -272,7 +367,7 @@
                                     <td class="text-in-border"><button><a href="#Stasik">Подробнее</a></button>
                                     </td>
                                     <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="#order">Заказать без раздумий</a></font>
+                                            <font size="4" color="red"><a href="santaSanta2.html">Заказать без раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -282,35 +377,7 @@
             </center>
         </section>
         <hr size="10" color="grey">
-        <center>
-            <section id="order">
-                <h1>
-                    <font size="4"><strong><big>Оформить заказ</big>
-                </h1>
-                <form action="/submit-order" method="post">
-                    <label for="name">Ваше имя:</label>
-                    <input type="text" id="name" name="name" required><br><br>
 
-                    <label for="email">Ваш email:</label>
-                    <input type="email" id="email" name="email" required><br><br>
-
-                    <label for="product">Выберите товар:</label>
-                    <select id="product" name="product">
-                        <option value="product1">Снегурка</option>
-                        <option value="product2">Санта</option>
-                        <option value="product1">Сертификат</option>
-                    </select><br><br>
-
-                    <label for="quantity">Количество:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" value="1"><br><br>
-
-                    <button type="submit">Оформить заказ</button>
-                </form>
-                </strong>
-                </font>
-            </section>
-        </center>
-        <hr size="10" color="grey">
         <section id="oNas">
             <section id="Angella">
                 <img src="https://bugaga.ru/uploads/posts/2013-12/1387211491_seksi-snegurochki-8.jpg" alt="Товар 1"
@@ -339,7 +406,7 @@
                                 незабываемым!</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
-                        <font size="4" color="red"><a href="#order">Заказать</a></font>
+                        <font size="4" color="red"><a href="santaSnegurka.html">Заказать</a></font>
                     </button></span>
             </section><br><br><br><br>
 
@@ -362,7 +429,7 @@
                                 вашего внимания, чтобы подарить незабываемое шоу!</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
-                        <font size="4" color="red"><a href="#order">Заказать</a></font>
+                        <font size="4" color="red"><a href="santaSnegurka1.html">Заказать</a></font>
                     </button></span>
             </section><br><br><br><br>
 
@@ -381,7 +448,7 @@
                                 незабываемых моментов.</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
-                        <font size="4" color="red"><a href="#order">Заказать</a></font>
+                        <font size="4" color="red"><a href="santaSnegurka2.html">Заказать</a></font>
                     </button></span>
             </section><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -407,7 +474,7 @@
                                 Ибрагим дарит зрителям впечатления, которые остаются в памяти надолго.</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
-                        <font size="4" color="red"><a href="#order">Заказать</a></font>
+                        <font size="4" color="red"><a href="santaSanta.html">Заказать</a></font>
                     </button></span>
             </section><br><br><br><br><br><br>
 
@@ -434,7 +501,7 @@
                                 эмоций и впечатлений, которые останутся в памяти надолго.</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
-                        <font size="4" color="red"><a href="#order">Заказать</a></font>
+                        <font size="4" color="red"><a href="santaSanta1.html">Заказать</a></font>
                     </button></span>
             </section><br><br><br><br><br><br><br>
 
@@ -461,7 +528,7 @@
                                 С ним вас ждет незабываемый опыт, который по-настоящему завораживает и увлекает.</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
-                        <font size="4" color="red"><a href="#order">Заказать</a></font>
+                        <font size="4" color="red"><a href="santaSanta2.html">Заказать</a></font>
                     </button></span>
             </section><br><br><br><br><br><br><br><br>
 
@@ -471,14 +538,14 @@
     <hr size="10" color="black">
     <footer>
         <center>
-        <table style="background-color: gray; color: black;">
-            <tr>
-                <td><a href="#products">
-                        <font color="black"><strong><big>Вернуться на главную</big></strong></font>
-                    </a></td>
-            </tr>
-        </table>
-    </center>
+            <table style="background-color: gray; color: black;">
+                <tr>
+                    <td><a href="#products">
+                            <font color="black"><strong><big>Вернуться на главную</big></strong></font>
+                        </a></td>
+                </tr>
+            </table>
+        </center>
         <section id="contacts">
             <center>
                 <big>
