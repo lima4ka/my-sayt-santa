@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Санта</title>
+    <style>
+        .text-in-border {
+            border: 2px solid white;
+            padding: 10px;
+            display: inline-block;
+            background-color: rgb(124, 23, 23);
+            color: white;
+        }
+
+        .text-in-border1 {
+            padding: 5px;
+            display: inline-block;
+            background-color: rgb(124, 23, 23);
+            color: rgb(0, 0, 0);
+        }
+
+        #body {
+            background-image: url("https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Новогодний баннер.jpg");
+            background-color: rgba(255, 255, 255, 0.486);
+            background-blend-mode: overlay;
+        }
+    </style>
+</head>
+
+<body style="background-color: gray; color: black;" id="body">
+
+    <header>
+        <center>
+            <table style="background-color: gray; color: black;">
+                <tr>
+                    <td><a href="santa.html">
+                            <font color="black"><strong><big>Главная</big></strong>&nbsp;&nbsp;</font>
+                        </a></td>
+                    <td><a href="#">
+                            <font color="black"><strong><big>Регистрация</big></strong>&nbsp;&nbsp;</font>
+                        </a></td>
+                    <td><a href="#">
+                            <font color="black"><strong><big>Войти</big></strong></font>
+                        </a></td>
+                </tr>
+            </table>
+            <hr size="15" color="red">
+        </center>
+    </header>
+    <form action="/submit-order" method="post">
+        <label>
+            <input type="checkbox" name="product" value="Snegurka">
+            <img src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Screenshot 2024-12-22 025048 (1).png"
+                alt="Снегурка" width="420" height="940" title="Снегурка" align="left" style="margin-right: 0px;">
+                <div class="text-in-border">
+                    <h1>Любава</h1>
+                    <h2>Цена:<br>200$ - час<br>350$ - два часа</h2>
+                </div>
+        </label><br><br><br><br><br><br><br><br>
+        <form action="/submit-order" method="post">
+            <table border="5" cellpadding="10" style="background-color: rgb(110, 15, 15); color: rgb(255, 255, 255);">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <font size="4"><strong><big>Оформить заказ</big></strong></font>
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><label for="name">Ваше имя:</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="number">Ваш номер:</label></td>
+                    <td><input type="number" id="number" name="number" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Ваш email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="quantity">Количество:</label></td>
+                    <td><input type="number" id="quantity" name="quantity" min="1" value="1"></td>
+                </tr>
+                <tr>
+                    <td><label for="payment">Выберите способ оплаты:</label></td>
+                    <td>
+                        <select id="payment" name="payment">
+                            <option value="card">Карта</option>
+                            <option value="cash">Наличные</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="delivery">Выберите способ доставки:</label></td>
+                    <td>
+                        <select id="delivery" name="delivery">
+                            <option value="courier">Курьер</option>
+                            <option value="pickup">Самовывоз</option>
+                            <option value="post">Почта</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="notes">Примечания к товару:</label></td>
+                    <td><textarea id="notes" name="notes" rows="4" cols="50"
+                            placeholder="Введите примечания (по желанию)"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+</body>
+
+</html>
