@@ -6,156 +6,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Санта</title>
     <style>
+        .text-in-border2,
         .text-in-border {
-            border: 2px solid white;
-            /* Белая рамка */
-            padding: 10px;
-            /* Отступ между текстом и рамкой */
-            display: inline-block;
-            /* Для рамки вокруг текста */
-            background-color: black;
-            /* Фон для контраста (опционально) */
-            color: white;
-            /* Цвет текста */
+
+            border: 1px solid #4f2626;
+            padding: 3px;
+            display: table;
+            background-color: #b79191;
+            color: #590000;
+
+        }
+
+        .text-in-border3 {
+            border: 1px solid #ffffff;
+            padding: 3px;
+            display: block;
+            background-color: #a2a2ff;
+            color: #3b0000;
         }
 
         .text-in-border1 {
             padding: 5px;
-            /* Отступ между текстом и рамкой */
             display: inline-block;
-            /* Рамка только вокруг текста */
-            background-color: rgb(107, 175, 110);
-            /* Фон для контраста (опционально) */
+            background-color: #a2a2ff;
             color: rgb(0, 0, 0);
-            /* Цвет текста */
         }
 
         #body {
             background-image: url("https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Новогодний баннер.jpg");
             background-color: rgba(255, 255, 255, 0.486);
-            background-blend-mode: overlay;
+            background-blend-mode: hard-light;
         }
 
         .form-container {
-            display: none;
+            display: table-caption;
+        }
+
+        h3 {
+            display: block;
+            font-size: 1.17em;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            unicode-bidi: isolate;
+        }
+
+        #buttonthik {
+            appearance: auto;
+            text-rendering: auto;
+            color: buttontext;
+            letter-spacing: normal;
+            word-spacing: normal;
+            line-height: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: center;
+            align-items: flex-start;
+            cursor: default;
+            box-sizing: border-box;
+            background-color: burlywood;
+            margin: 0em;
+            padding-block: 1px;
+            padding-inline: 6px;
+            border-width: 2px;
+            border-style: outset;
+            border-color: beige;
+            border-image: initial;
+        }
+
+        .glavna {
+            background-color: rgb(238, 84, 84);
+            display: table;
+            border-collapse: separate;
+            box-sizing: border-box;
+            text-indent: initial;
+            unicode-bidi: isolate;
+            border-spacing: 5px;
+            border-color: gray;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nadpispis {
+            border: 2px solid #1c3528;
+            padding: 3px;
+            display: ruby;
+            background-color: rgb(185 225 186);
+            color: #142847;
+            padding-left: 840px;
+            padding-right: 840px;
+
+        }
+
+        #text {
+            text-shadow: 4px 0 6px rgba(82, 0, 0, 1);
+            color: #ffffff;
+            font-variant: small-caps;
+        }
+
+        button {
+            background-color: #7ff5ff;
         }
     </style>
     </style>
 </head>
 
-<body style="background-color: gray; color: black;" id="body">
+<body id="body">
     <header>
         <center>
             <img src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Premium Vector _ Christmas Vector Realistic divider with new year fir tree red satin bow isolated on white background (1).png"
                 alt="колокот" width="620" height="200">
             <h1>
-                <font size="10" color="black">New Year's miracle</font>
+                <font size="10" color="black" id="text">New Year's miracle</font>
             </h1>
-            <table style="background-color: gray; color: black;">
+            <table class="glavna">
                 <tr>
-                    <td><a href="#products">
-                            <font color="black"><strong><big>Главная</big></strong>&nbsp;&nbsp;</font>
+                    <td><a href="#products" color="#4f69cf;">
+                            <font><strong><big>Главная</big></strong>&nbsp;&nbsp;</font>
                         </a></td>
-                    <td><a href="#oNas">
-                            <font color="black"><strong><big>О нас</big></strong>&nbsp;&nbsp;</font>
+                    <td><a href="#oNas" color="#4f69cf;">
+                            <font><strong><big>О нас</big></strong>&nbsp;&nbsp;</font>
                         </a></td>
-                    <td><a href="#contacts">
-                            <font color="black"><strong><big>Котакты</big></strong>&nbsp;&nbsp;</font>
+                    <td><a href="#contacts" color="#4f69cf;">
+                            <font><strong><big>Котакты</big></strong>&nbsp;&nbsp;</font>
                         </a></td>
-                    <td><font color="black"><strong><big><button onclick="showForm('registerForm')">Регистрация</button></big></strong>&nbsp;&nbsp;</font></td>
-                    <td><font color="black"><strong><big><button onclick="showForm('loginForm')">Вход</button></big></strong></font></td>
+                    <td>
+                        <font color="black"><strong><big><button onclick="showForm('registerForm')"
+                                        style="background-color: cornflowerblue;">Регистрация</button></big></strong>&nbsp;&nbsp;
+                        </font>
+                    </td>
+                    <td>
+                        <font color="black"><strong><big><button onclick="showForm('loginForm')"
+                                        style="background-color: cornflowerblue;">Вход</button></big></strong></font>
+                    </td>
                 </tr>
             </table>
-            
-<!-- Форма регистрации -->
-<div id="registerForm" class="form-container">
-    <table>
-        <ul>
-    <li class="text-in-border"><h3>Регистрация</h3></li>
-    <form id="registrationForm">
-    <li class="text-in-border"><label for="username">Имя пользователя:</label></li>
-        <li class="text-in-border"><input type="text" id="username" name="username" required></li>
 
-    <li class="text-in-border"><label for="email">Электронная почта:</label></li>
-<li class="text-in-border"><input type="email" id="email" name="email" required></li>
+            <!-- Форма регистрации -->
+            <div id="registerForm" class="form-container">
+                <table>
+                    <ul>
+                        <li class="text-in-border2">
+                            <h3>Регистрация</h3>
+                        </li>
+                        <form id="registrationForm">
+                            <li class="text-in-border2"><label for="username">Имя пользователя:</label></li>
+                            <li class="text-in-border2"><input type="text" id="username" name="username" required></li>
 
-    <li class="text-in-border"><label for="password">Пароль:</label></li>
-<li class="text-in-border"><input type="password" id="password" name="password" required></li>
+                            <li class="text-in-border2"><label for="email">Электронная почта:</label></li>
+                            <li class="text-in-border2"><input type="email" id="email" name="email" required></li>
 
-    <li class="text-in-border"><button type="submit">Зарегистрироваться</button></li>
-    </form>
-</ul>
-</table>
-</div>
+                            <li class="text-in-border2"><label for="password">Пароль:</label></li>
+                            <li class="text-in-border2"><input type="password" id="password" name="password" required>
+                            </li>
 
-<!-- Форма входа -->
-<div id="loginForm" class="form-container">
-    <table>
-        <ul>
-        <li class="text-in-border"><h3>Вход</h3></li>
-    <form id="loginForm">
-    <li class="text-in-border"><label for="loginEmail">Электронная почта:</label></li>
-<li class="text-in-border"><input type="email" id="loginEmail" name="email" required></li>
+                            <li class="text-in-border2"><button type="submit"
+                                    id="buttonthik">Зарегистрироваться</button>
+                            </li>
+                        </form>
+                    </ul>
+                </table>
+            </div>
 
-<li class="text-in-border"><label for="loginPassword">Пароль:</label></li>
-<li class="text-in-border"><input type="password" id="loginPassword" name="password" required></li>
+            <!-- Форма входа -->
+            <div id="loginForm" class="form-container">
+                <table>
+                    <ul>
+                        <li class="text-in-border">
+                            <h3>Вход</h3>
+                        </li>
+                        <form id="loginForm">
+                            <li class="text-in-border"><label for="loginEmail">Электронная почта:</label></li>
+                            <li class="text-in-border"><input type="email" id="loginEmail" name="email" required></li>
 
-<li class="text-in-border"><button type="submit">Войти</button></li>
-    </form>
-</ul>
-</table>
-</div>
+                            <li class="text-in-border"><label for="loginPassword">Пароль:</label></li>
+                            <li class="text-in-border"><input type="password" id="loginPassword" name="password"
+                                    required></li>
 
-<script>
-    // Функция для переключения между формами
-    function showForm(formId) {
-        // Скрыть все формы
-        const forms = document.querySelectorAll('.form-container');
-        forms.forEach(form => form.style.display = 'none');
+                            <li class="text-in-border"><button type="submit" id="buttonthik">Войти</button></li>
+                        </form>
+                    </ul>
+                </table>
+            </div>
 
-        // Показать выбранную форму
-        const selectedForm = document.getElementById(formId);
-        if (selectedForm) {
-            selectedForm.style.display = 'block';
-        }
-    }
+            <script>
+                // Функция для переключения между формами
+                function showForm(formId) {
+                    // Скрыть все формы
+                    const forms = document.querySelectorAll('.form-container');
+                    forms.forEach(form => form.style.display = 'none');
 
-    // По умолчанию показывать форму регистрации
-    showForm('registerForm');
+                    // Показать выбранную форму
+                    const selectedForm = document.getElementById(formId);
+                    if (selectedForm) {
+                        selectedForm.style.display = 'block';
+                    }
+                }
 
-    // Обработчик для регистрации
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        let username = document.getElementById('username').value;
-        let email = document.getElementById('email').value;
-        let password = document.getElementById('password').value;
+                // По умолчанию показывать форму регистрации
+                showForm('registerForm');
 
-        // Валидация данных
-        if (username && email && password) {
-            alert("Вы успешно зарегистрировались!");
-            // Здесь можно добавить код для отправки данных на сервер
-        } else {
-            alert("Пожалуйста, заполните все поля.");
-        }
-    });
+                // Обработчик для регистрации
+                document.getElementById('registrationForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
 
-    // Обработчик для входа
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+                    let username = document.getElementById('username').value;
+                    let email = document.getElementById('email').value;
+                    let password = document.getElementById('password').value;
 
-        let loginEmail = document.getElementById('loginEmail').value;
-        let loginPassword = document.getElementById('loginPassword').value;
+                    // Валидация данных
+                    if (username && email && password) {
+                        alert("Вы успешно зарегистрировались!");
+                        // Здесь можно добавить код для отправки данных на сервер
+                    } else {
+                        alert("Пожалуйста, заполните все поля.");
+                    }
+                });
 
-        // Валидация данных
-        if (loginEmail && loginPassword) {
-            alert("Вы успешно вошли в систему!");
-            // Здесь можно добавить код для проверки данных на сервере
-        } else {
-            alert("Пожалуйста, введите свои данные.");
-        }
-    });
-</script>
+                // Обработчик для входа
+                document.getElementById('loginForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    let loginEmail = document.getElementById('loginEmail').value;
+                    let loginPassword = document.getElementById('loginPassword').value;
+
+                    // Валидация данных
+                    if (loginEmail && loginPassword) {
+                        alert("Вы успешно вошли в систему!");
+                        // Здесь можно добавить код для проверки данных на сервере
+                    } else {
+                        alert("Пожалуйста, введите свои данные.");
+                    }
+                });
+            </script>
             <hr size="15" color="red">
         </center>
     </header>
@@ -182,7 +271,7 @@
         <section id="products">
             <center>
                 <h1>
-                    <font size="5"><big>НОВОГОДНИЕ ТОВАРЫ</big></font>
+                    <font size="5" class="nadpispis"><big>НОВОГОДНИЕ ТОВАРЫ</big></font>
                 </h1>
                 <hr size="10" color="black">
                 <div>
@@ -201,14 +290,15 @@
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
                                     <font size="4" color="black"><strong>
-                                            <td class="text-in-border"><big>Цена: 300$; 500$</big></td>
-                                            <td class="text-in-border"><big>Описание: Сделай лучшый подарок и купи
+                                            <td class="text-in-border3"><big>Цена: 300$; 500$</big></td>
+                                            <td class="text-in-border3"><big>Описание: Сделай лучшый подарок и купи
                                                     сертификат на любую покупку по
                                                     выбранной цене</big></td>
                                         </strong></font>
                                 </tr>
                             </table>
-                            <font size="4" color="red"><a href="santaSertefikat.html" class="text-in-border">Купить</a></font>
+                            <font size="4" color="red"><a href="santaSertefikat.html" class="text-in-border3">Купить</a>
+                            </font>
                         </article>
                     </section><br><br><br><br>
                     <hr size="10" color="black">
@@ -216,15 +306,16 @@
                     <section id="snegurohki">
                         <article>
                             <h1>
-                                <font size="6">СНЕГУРОЧКИ</font>
+                                <font size="6" class="nadpispis">СНЕГУРОЧКИ</font>
                             </h1>
                             <img src="https://bugaga.ru/uploads/posts/2013-12/1387211491_seksi-snegurochki-8.jpg"
                                 alt="Товар 1" width="420" height="540">
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
                                     <font size="4" color="black"><strong>
-                                            <td class="text-in-border"><big>Цена: 200$</big></td>
-                                            <td class="text-in-border"><big>Описание: Анжелла с радостью проведет с вами
+                                            <td class="text-in-border3"><big>Цена: 200$</big></td>
+                                            <td class="text-in-border3"><big>Описание: Анжелла с радостью проведет с
+                                                    вами
                                                     новогодний вечер.<br>Уш она не
                                                     за что не даст вам грустить!</big></td>
                                         </strong></font>
@@ -232,10 +323,11 @@
                             </table>
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
-                                    <td class="text-in-border"><button><a href="#Angella">Подробнее</a></button>
+                                    <td class="text-in-border3"><button><a href="#Angella">Подробнее</a></button>
                                     </td>
-                                    <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="santaSnegurka.html">Заказать без раздумий</a></font>
+                                    <td class="text-in-border3"><button>
+                                            <font size="4" color="red"><a href="santaSnegurka.html">Заказать без
+                                                    раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -249,8 +341,8 @@
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
                                     <font size="4" color="black"><strong>
-                                            <td class="text-in-border"><big>Цена: 200$</big></td>
-                                            <td class="text-in-border"><big>Описание: Жанна с радостью проведет с вами
+                                            <td class="text-in-border3"><big>Цена: 200$</big></td>
+                                            <td class="text-in-border3"><big>Описание: Жанна с радостью проведет с вами
                                                     новогодний вечер.<br>Уш она не за
                                                     что не даст вам грустить!</big></td>
                                         </strong></font>
@@ -258,10 +350,11 @@
                             </table>
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
-                                    <td class="text-in-border"><button><a href="#Ganna">Подробнее</a></button>
+                                    <td class="text-in-border3"><button><a href="#Ganna">Подробнее</a></button>
                                     </td>
-                                    <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="santaSnegurka1.html">Заказать без раздумий</a></font>
+                                    <td class="text-in-border3"><button>
+                                            <font size="4" color="red"><a href="santaSnegurka1.html">Заказать без
+                                                    раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -273,8 +366,8 @@
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
                                     <font size="4" color="black"><strong>
-                                            <td class="text-in-border"><big>Цена: 200$</big></td>
-                                            <td class="text-in-border"><big>Описание: Любава с радостью проведет с вами
+                                            <td class="text-in-border3"><big>Цена: 200$</big></td>
+                                            <td class="text-in-border3"><big>Описание: Любава с радостью проведет с вами
                                                     новогодний вечер.<br>Уш она не
                                                     за что не даст вам грустить!</big></td>
                                         </strong></font>
@@ -282,10 +375,11 @@
                             </table>
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
-                                    <td class="text-in-border"><button><a href="#Lubava">Подробнее</a></button>
+                                    <td class="text-in-border3"><button><a href="#Lubava">Подробнее</a></button>
                                     </td>
-                                    <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="santaSnegurka2.html">Заказать без раздумий</a></font>
+                                    <td class="text-in-border3"><button>
+                                            <font size="4" color="red"><a href="santaSnegurka2.html">Заказать без
+                                                    раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
@@ -297,15 +391,15 @@
                     <section id="santa">
                         <article>
                             <h1>
-                                <font size="6">САНТЫ</font>
+                                <font size="6" class="nadpispis">САНТЫ</font>
                             </h1>
                             <img src="https://striptease.com.ua/media/cache/0f/ba/0fba4b4c64fb68e7564d8d49fef663b0/5c48bde7683b53ca738cb94707407f8e.jpg"
                                 alt="Товар 1" width="420" height="540">
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
                                     <font size="4" color="black"><strong>
-                                            <td class="text-in-border"><big>Цена: 200$</big></td>
-                                            <td class="text-in-border"><big>Описание: Ибрагим лучшый в своем
+                                            <td class="text-in-border3"><big>Цена: 200$</big></td>
+                                            <td class="text-in-border3"><big>Описание: Ибрагим лучшый в своем
                                                     деле!<br>Подойдет для любых развлекательных
                                                     программ.</big></td>
                                         </strong></font>
@@ -313,14 +407,15 @@
                             </table>
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
-                                    <td class="text-in-border"><button><a href="#Ibragim">Подробнее</a></button>
+                                    <td class="text-in-border3"><button><a href="#Ibragim">Подробнее</a></button>
                                     </td>
-                                    <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="santaSanta.html">Заказать без раздумий</a></font>
+                                    <td class="text-in-border3"><button>
+                                            <font size="4" color="red"><a href="santaSanta.html">Заказать без
+                                                    раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
-                        </article>
+                        </article><br><br>
 
                         <article>
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD2BOU84VxWycz03o06-JZ30bXZQ_EMrIRzVyoL8Ux-F8v4o9TbfRBzSazPGESiewzLNs&usqp=CAU"
@@ -328,8 +423,8 @@
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
                                     <font size="4" color="black"><strong>
-                                            <td class="text-in-border"><big>Цена: 200$</big></td>
-                                            <td class="text-in-border"><big>Описание: Олежа лучшый в своем
+                                            <td class="text-in-border3"><big>Цена: 200$</big></td>
+                                            <td class="text-in-border3"><big>Описание: Олежа лучшый в своем
                                                     деле!<br>Подойдет для любых развлекательных
                                                     программ.</big></td>
                                         </strong></font>
@@ -337,14 +432,15 @@
                             </table>
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
-                                    <td class="text-in-border"><button><a href="#Olega">Подробнее</a></button>
+                                    <td class="text-in-border3"><button><a href="#Olega">Подробнее</a></button>
                                     </td>
-                                    <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="santaSanta1.html">Заказать без раздумий</a></font>
+                                    <td class="text-in-border3"><button>
+                                            <font size="4" color="red"><a href="santaSanta1.html">Заказать без
+                                                    раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
-                        </article>
+                        </article><br><br>
 
                         <article>
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu2HLrQHIa1OVpn4U6oo1tQ0zeK5nTvAre-LMXxuHzTphcKVN_2O2Bvn1cidy2koD6trU&usqp=CAU"
@@ -352,11 +448,11 @@
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
                                     <font size="4" color="black"><strong>
-                                            <td class="text-in-border"><big>
+                                            <td class="text-in-border3"><big>
                                                     <font color="red">!АКЦИЯ!</font>
                                                 </big></td>
-                                            <td class="text-in-border"><big>Цена: 199$</big></td>
-                                            <td class="text-in-border"><big>Описание: Стасик лучшый в своем
+                                            <td class="text-in-border3"><big>Цена: 199$</big></td>
+                                            <td class="text-in-border3"><big>Описание: Стасик лучшый в своем
                                                     деле!<br>Подойдет для любых развлекательных
                                                     программ.</big></td>
                                         </strong></font>
@@ -364,20 +460,25 @@
                             </table>
                             <table border="1" cellspacing="0" cellpadding="7">
                                 <tr>
-                                    <td class="text-in-border"><button><a href="#Stasik">Подробнее</a></button>
+                                    <td class="text-in-border3"><button><a href="#Stasik">Подробнее</a></button>
                                     </td>
-                                    <td class="text-in-border"><button>
-                                            <font size="4" color="red"><a href="santaSanta2.html">Заказать без раздумий</a></font>
+                                    <td class="text-in-border3"><button>
+                                            <font size="4" color="red"><a href="santaSanta2.html">Заказать без
+                                                    раздумий</a></font>
                                         </button></td>
                                 </tr>
                             </table>
                         </article>
                     </section>
-                </div>
+                </div><br><br>
             </center>
         </section>
         <hr size="10" color="grey">
-
+        <center>
+            <h1>
+                <font size="6" class="nadpispis">О нас.</font>
+            </h1>
+        </center>
         <section id="oNas">
             <section id="Angella">
                 <img src="https://bugaga.ru/uploads/posts/2013-12/1387211491_seksi-snegurochki-8.jpg" alt="Товар 1"
@@ -386,29 +487,29 @@
                     <font size="10" color="black">Анжеллочка</font>
                 </h1>
                 <font size="4" color="black"><big><strong>
-                            <span class="text-in-border1">23 годика<br><br>Позвольте представить вам Анжеллу – истинное
+                            <span class="text-in-border1">Позвольте представить вам Анжеллу – истинное
                                 воплощение грации, уверенности и
-                                чарующей энергии!<br><br>Ее движения, словно поэзия, завораживают и оставляют
+                                чарующей энергии!<br>Ее движения, словно поэзия, завораживают и оставляют
                                 неизгладимое
-                                впечатление.<br><br>С первой же минуты вы почувствуете, как атмосфера вокруг наполняется
+                                впечатление.<br>С первой же минуты вы почувствуете, как атмосфера вокруг наполняется
                                 магией её
-                                присутствия.<br><br>
+                                присутствия.<br>
                                 Анжелла – профессионал высочайшего уровня, для которой танец – это не просто
                                 искусство,<br>а способ
-                                рассказывать историю, пробуждать эмоции и вдохновлять.<br><br>Она знает, как создать
+                                рассказывать историю, пробуждать эмоции и вдохновлять.<br>Она знает, как создать
                                 настроение, которое
-                                останется в вашей памяти надолго.<br><br>
-                                Сочетание её утончённой пластики и харизмы не оставит никого равнодушным.<br><br>Она
+                                останется в вашей памяти надолго.<br>
+                                Сочетание её утончённой пластики и харизмы не оставит никого равнодушным.<br>Она
                                 превращает каждое
                                 выступление в настоящее шоу, где каждый момент – это праздник красоты, смелости и
-                                шарма.<br><br>
+                                шарма.<br>
                                 Анжелла уже готова подарить вам яркие впечатления и сделать ваш вечер
                                 незабываемым!</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
                         <font size="4" color="red"><a href="santaSnegurka.html">Заказать</a></font>
                     </button></span>
-            </section><br><br><br><br>
+            </section><br><br><br><br><br><br><br><br><br><br><br><br>
 
             <section id="Ganna">
                 <img src="https://cn1.nevsedoma.com.ua/images/2009/247/3/snegurpG.jpg" alt="Товар 1" width="420"
@@ -417,34 +518,35 @@
                     <font size="10" color="black">Жанна</font>
                 </h1><br>
                 <font size="4" color="black"><big><strong>
-                            <span class="text-in-border1">Позвольте представить невероятную Жанну!<br><br>
-                                Жанна – это не просто артистка, это вихрь эмоций, грации и магнетизма.<br><br>Каждое её
-                                движение на сцене – это история, рассказанная через танец.<br><br>Её пластика
+                            <span class="text-in-border1">Позвольте представить невероятную Жанну!<br>
+                                Жанна – это не просто артистка, это вихрь эмоций, грации и магнетизма.<br>Каждое её
+                                движение на сцене – это история, рассказанная через танец.<br>Её пластика
                                 завораживает, а уверенность и очарование создают атмосферу, в которой зрители забывают
-                                обо всём вокруг.<br><br>
-                                Жанна умеет быть разной: игривой, таинственной, нежной или дерзкой.<br><br>Она
+                                обо всём вокруг.<br>
+                                Жанна умеет быть разной: игривой, таинственной, нежной или дерзкой.<br>Она
                                 превращает любое выступление в маленький праздник, где каждый почувствует себя
-                                особенным.<br><br>
-                                Готовы окунуться в мир эстетики, ритма и неотразимого шарма?<br><br>Жанна уже ждёт
+                                особенным.<br>
+                                Готовы окунуться в мир эстетики, ритма и неотразимого шарма?<br>Жанна уже ждёт
                                 вашего внимания, чтобы подарить незабываемое шоу!</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
                         <font size="4" color="red"><a href="santaSnegurka1.html">Заказать</a></font>
                     </button></span>
-            </section><br><br><br><br>
+            </section><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
             <section id="Lubava">
                 <img src="https://cn1.nevsedoma.com.ua/images/2009/247/3/sneguroc.jpg" alt="Товар" width="420"
                     height="590" align="left" style="margin-right: 10px;" class="text-in-border1">
                 <h1 class="text-in-border1">
                     <font size="10" color="black">Любава</font>
-                </h1><br>
+                </h1>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <font size="4" color="black"><big><strong>
                             <span class="text-in-border1">Люба — не просто исполнитель, а настоящая творческая
-                                личность,<br><br>которая умеет дарить эмоции и волнующие переживания.<br><br>Ее
+                                личность,<br>которая умеет дарить эмоции и волнующие переживания.<br>Ее
                                 выступления
-                                всегда элегантны и наполнены энергией, что делает их незабываемыми.<br><br>
-                                С Любой вам точно предстоит пережить что-то особенное,<br><br>полное ярких впечатлений и
+                                всегда элегантны и наполнены энергией, что делает их незабываемыми.<br>
+                                С Любой вам точно предстоит пережить что-то особенное,<br>полное ярких впечатлений и
                                 незабываемых моментов.</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
@@ -458,19 +560,19 @@
                     class="text-in-border1">
                 <h1 class="text-in-border1">
                     <font size="10" color="black">Ибрагим</font>
-                </h1><br>
+                </h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <font size="4" color="black"><big><strong>
                             <span class="text-in-border1">Ибрагим — уникальный артист, чье выступление всегда
-                                притягивает взгляд.<br><br>Его мастерство и харизма создают неповторимую атмосферу,<br>в
+                                притягивает взгляд.<br>Его мастерство и харизма создают неповторимую атмосферу,<br>в
                                 которой
-                                каждый зритель чувствует себя<br>частью чего-то особенного.<br><br>Уверенность, стиль и
+                                каждый зритель чувствует себя<br>частью чего-то особенного.<br>Уверенность, стиль и
                                 грация
                                 Ибрагима, а также его прекрасное тело,<br>делают его выступления яркими и
-                                незабываемыми.<br><br>
+                                незабываемыми.<br>
                                 Этот талантливый исполнитель способен передавать эмоции и создаёт целый мир на сцене,
-                                который захватывает с первых секунд.<br><br>Его физическая подготовка, внимание к
+                                который захватывает с первых секунд.<br>Его физическая подготовка, внимание к
                                 деталям и
-                                неповторимая энергия делают каждое его выступление по-настоящему исключительным.<br><br>
+                                неповторимая энергия делают каждое его выступление по-настоящему исключительным.<br>
                                 Ибрагим дарит зрителям впечатления, которые остаются в памяти надолго.</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
@@ -484,18 +586,18 @@
                     class="text-in-border1">
                 <h1 class="text-in-border1">
                     <font size="10" color="black">Олежа</font>
-                </h1><br>
+                </h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <font size="4" color="black"><big><strong>
                             <span class="text-in-border1">
                                 Олег — талантливый артист, чье выступление привлекает внимание своей энергией и
-                                харизмой.<br><br>Его уверенность на сцене и умение создавать атмосферу,<br>наполненную
+                                харизмой.<br>Его уверенность на сцене и умение создавать атмосферу,<br>наполненную
                                 эмоциями,
-                                делают каждое его появление особенным.<br><br>Олег обладает отличной физической формой,
+                                делают каждое его появление особенным.<br>Олег обладает отличной физической формой,
                                 что
-                                только усиливает эффект от его выступлений.<br><br>
+                                только усиливает эффект от его выступлений.<br>
                                 Его движения сочетают в себе силу и грацию, а внимание к деталям делает шоу
-                                незабываемым.<br><br>Он мастерски взаимодействует с аудиторией, заставляя зрителей
-                                почувствовать себя частью его мира.<br><br>
+                                незабываемым.<br>Он мастерски взаимодействует с аудиторией, заставляя зрителей
+                                почувствовать себя частью его мира.<br>
                                 С Олегом каждое выступление — это не просто зрелище, а настоящее событие,<br>полное
                                 ярких
                                 эмоций и впечатлений, которые останутся в памяти надолго.</span>
@@ -511,20 +613,20 @@
                     class="text-in-border1">
                 <h1 class="text-in-border1">
                     <font size="10" color="black">Стасик</font>
-                </h1><br>
+                </h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <font size="4" color="black"><big><strong>
                             <span class="text-in-border1">
                                 Стасик — талантливый артист, который умело сочетает харизму и мастерство в каждом своем
-                                выступлении.<br><br>Его уверенность на сцене, а также прекрасно развиты мышцы и
+                                выступлении.<br>Его уверенность на сцене, а также прекрасно развиты мышцы и
                                 физическая
                                 форма создают неповторимую атмосферу,<br>которая привлекает внимание и не оставляет
-                                равнодушным.<br><br>Стасик легко взаимодействует с аудиторией, погружая зрителей в мир
+                                равнодушным.<br>Стасик легко взаимодействует с аудиторией, погружая зрителей в мир
                                 эмоций и
-                                впечатлений.<br><br>
+                                впечатлений.<br>
                                 Его движения полны грации и силы, что делает каждое выступление динамичным и
-                                захватывающим.<br><br>Стасик умеет подчеркнуть свою индивидуальность, даря зрителям
+                                захватывающим.<br>Стасик умеет подчеркнуть свою индивидуальность, даря зрителям
                                 невероятную
-                                энергию и атмосферу, которая остается в памяти надолго.<br><br>
+                                энергию и атмосферу, которая остается в памяти надолго.<br>
                                 С ним вас ждет незабываемый опыт, который по-настоящему завораживает и увлекает.</span>
                         </strong></big></font><br><br>
                 <span class="text-in-border"><button>
@@ -538,10 +640,10 @@
     <hr size="10" color="black">
     <footer>
         <center>
-            <table style="background-color: gray; color: black;">
+            <table style="background-color: #0044bb; color: #ccd1ff;">
                 <tr>
-                    <td><a href="#products">
-                            <font color="black"><strong><big>Вернуться на главную</big></strong></font>
+                    <td><a href="#products" style="background-color: #0044bb; color: #ccd1ff;">
+                            <font><strong><big>Вернуться на главную</big></strong></font>
                         </a></td>
                 </tr>
             </table>
@@ -551,16 +653,16 @@
                 <big>
                     <strong>
                         <h1>
-                            <font size="6">Контакты</font>
+                            <font size="6" class="nadpispis">Контакты</font>
                         </h1>
-                        <ul>
+                        <ul class="text-in-border2">
                             <li>Телефон: +8 (123) 456-78-90</li>
                             <li>Email: streptiz@example.com</li>
                             <li>Адрес: ул. Пушкина</li>
                             <li>Социальные сети:
                                 <tr>
-                                    <td><a href="https://facebook.com" target="_blank">Facebook</a></td>
-                                    <td><a href="https://twitter.com" target="_blank">Twitter</a></td>
+                                    <td><a href="https://facebook.com" target="_blank">Facebook;</a></td>
+                                    <td><a href="https://twitter.com" target="_blank">Twitter;</a></td>
                                     <td><a href="https://instagram.com" target="_blank">Instagram</a></td>
                                 </tr>
                             </li>
