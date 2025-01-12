@@ -3,17 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Санта</title>
     <style>
         .text-in-border2,
         .text-in-border {
 
-            border: 1px solid #4f2626;
+            border: 1px solid #313131;
             padding: 3px;
-            display: table;
-            background-color: #b79191;
-            color: #590000;
+            display: -webkit-box;
+            background-color: #a39595;
+            color: #430000;
+            width: 174px;
+            height: 17px;
 
         }
 
@@ -36,6 +38,11 @@
             background-image: url("https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Новогодний баннер.jpg");
             background-color: rgba(255, 255, 255, 0.486);
             background-blend-mode: hard-light;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            align-content: center;
+            overflow-x: hidden;
         }
 
         .form-container {
@@ -79,14 +86,21 @@
         }
 
         .glavna {
-            background-color: rgb(238, 84, 84);
-            display: table;
+            background-color: rgb(177 199 179);
+            display: ruby;
             border-collapse: separate;
             box-sizing: border-box;
             text-indent: initial;
             unicode-bidi: isolate;
-            border-spacing: 5px;
+            border-spacing: 11px;
             border-color: gray;
+            position: absolute;
+            top: -8px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            z-index: 1100;
         }
 
         a {
@@ -113,6 +127,66 @@
         button {
             background-color: #7ff5ff;
         }
+
+        #nazvanie {
+            width: 1900px;
+            height: 950px;
+            position: relative;
+            top: -10px;
+            left: 0px;
+            display: inline-block;
+            z-index: -1000;
+        }
+
+        .vhod {
+            position: absolute;
+            left: 1678px;
+            top: 26px;
+            z-index: 1001;
+            display: inline-block;
+        }
+
+        .snegurka {
+            position: absolute;
+            left: 286px;
+            top: -11px;
+            height: 325px;
+            width: 761px;
+            z-index: 1037;
+            display: block;
+        }
+
+        .santa {
+            position: absolute;
+            left: 991px;
+            top: 28px;
+            height: 433px;
+            width: 910px;
+            z-index: 1037;
+            display: block;
+        }
+
+        .sertifikat {
+            position: absolute;
+            left: 844px;
+            top: 33px;
+            height: 277px;
+            width: 350px;
+            z-index: 1037;
+            display: block;
+        }
+
+        .stiker {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 100px;
+            width: 230px;
+            z-index: 1100;
+            background-size: cover;
+            background-position: center;
+            background-image: url("https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/stiker2.png");
+        }
     </style>
     </style>
 </head>
@@ -120,11 +194,8 @@
 <body id="body">
     <header>
         <center>
-            <img src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Premium Vector _ Christmas Vector Realistic divider with new year fir tree red satin bow isolated on white background (1).png"
-                alt="колокот" width="620" height="200">
-            <h1>
-                <font size="10" color="black" id="text">New Year's miracle</font>
-            </h1>
+            <img src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/НАЗВАНИЕ.png" alt="колокот"
+                id="nazvanie">
             <table class="glavna">
                 <tr>
                     <td><a href="#products" color="#4f69cf;">
@@ -151,7 +222,7 @@
             <!-- Форма регистрации -->
             <div id="registerForm" class="form-container">
                 <table>
-                    <ul>
+                    <ul class="vhod">
                         <li class="text-in-border2">
                             <h3>Регистрация</h3>
                         </li>
@@ -177,7 +248,7 @@
             <!-- Форма входа -->
             <div id="loginForm" class="form-container">
                 <table>
-                    <ul>
+                    <ul class="vhod">
                         <li class="text-in-border">
                             <h3>Вход</h3>
                         </li>
@@ -253,14 +324,17 @@
             <nav>
                 <tr>
                     <td><a href="#sertefikat"><img
-                                src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Cd Christmas Flyer.png"
-                                alt="Перейти в секцию" width="220" height="140" title="Сертификаты"></a></td>
+                                src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/стикер3 (1).png"
+                                alt="Перейти в секцию" width="220" height="140" title="Сертификаты"
+                                class="sertifikat"></a></td>
                     <td><a href="#snegurohki"><img
-                                src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/031881d8-9309-48a2-8aaf-952f6f5f15ad (1).png"
-                                alt="Перейти в секцию" width="120" height="140" title="Заказать Снегурку"></a></td>
+                                src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/стикер1.png"
+                                alt="Перейти в секцию" width="120" height="140" title="Заказать Снегурку"
+                                class="snegurka"></a></td>
                     <td><a href="#santa"><img
-                                src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/Santa PNG File _ Christmas Digital Art for Crafts, Sublimation, DIY Gifts & Holiday Projects.png"
-                                alt="Перейти в секцию" width="220" height="140" title="Заказать Санту"></a></td>
+                                src="https://raw.githubusercontent.com/lima4ka/my-sayt-santa/main/foto/стикер2.png"
+                                alt="Перейти в секцию" width="220" height="140" title="Заказать Санту"
+                                class="santa"></a></td>
                 </tr>
             </nav>
         </center>
@@ -560,7 +634,8 @@
                     class="text-in-border1">
                 <h1 class="text-in-border1">
                     <font size="10" color="black">Ибрагим</font>
-                </h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </h1>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <font size="4" color="black"><big><strong>
                             <span class="text-in-border1">Ибрагим — уникальный артист, чье выступление всегда
                                 притягивает взгляд.<br>Его мастерство и харизма создают неповторимую атмосферу,<br>в
@@ -586,7 +661,8 @@
                     class="text-in-border1">
                 <h1 class="text-in-border1">
                     <font size="10" color="black">Олежа</font>
-                </h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </h1>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <font size="4" color="black"><big><strong>
                             <span class="text-in-border1">
                                 Олег — талантливый артист, чье выступление привлекает внимание своей энергией и
@@ -613,7 +689,8 @@
                     class="text-in-border1">
                 <h1 class="text-in-border1">
                     <font size="10" color="black">Стасик</font>
-                </h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </h1>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <font size="4" color="black"><big><strong>
                             <span class="text-in-border1">
                                 Стасик — талантливый артист, который умело сочетает харизму и мастерство в каждом своем
